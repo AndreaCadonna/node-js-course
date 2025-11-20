@@ -1,0 +1,10 @@
+# Ignore test data and runtime files
+secure-storage/
+*.enc
+*.key
+*.pem
+node_modules/
+*.log
+.env
+temp/
+test-files/
