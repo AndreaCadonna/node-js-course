@@ -1,0 +1,48 @@
+2024-11-20 10:00:01 [INFO] Application started on port 3000
+2024-11-20 10:00:05 [INFO] Database connection established
+192.168.1.100 - - [20/Nov/2024:10:00:10 +0000] "GET /api/users HTTP/1.1" 200 1234 "-" "Mozilla/5.0"
+192.168.1.101 - - [20/Nov/2024:10:00:15 +0000] "POST /api/login HTTP/1.1" 200 567 "-" "Mozilla/5.0"
+2024-11-20 10:00:20 [INFO] User 'john@example.com' logged in
+192.168.1.100 - - [20/Nov/2024:10:00:25 +0000] "GET /api/products HTTP/1.1" 200 4567 "-" "Mozilla/5.0"
+192.168.1.102 - - [20/Nov/2024:10:00:30 +0000] "GET /api/products/123 HTTP/1.1" 404 89 "-" "Mozilla/5.0"
+2024-11-20 10:00:35 [WARN] Product not found: 123
+192.168.1.103 - - [20/Nov/2024:10:00:40 +0000] "POST /api/orders HTTP/1.1" 201 890 "-" "Mozilla/5.0"
+2024-11-20 10:00:45 [INFO] New order created: ORD-001
+192.168.1.104 - - [20/Nov/2024:10:00:50 +0000] "GET /api/orders HTTP/1.1" 200 2345 "-" "Mozilla/5.0"
+192.168.1.105 - - [20/Nov/2024:10:00:55 +0000] "DELETE /api/orders/999 HTTP/1.1" 404 67 "-" "Mozilla/5.0"
+2024-11-20 10:01:00 [ERROR] Database connection lost
+2024-11-20 10:01:05 [ERROR] Failed to execute query: SELECT * FROM orders
+192.168.1.100 - - [20/Nov/2024:10:01:10 +0000] "GET /api/users HTTP/1.1" 500 123 "-" "Mozilla/5.0"
+192.168.1.101 - - [20/Nov/2024:10:01:15 +0000] "GET /api/products HTTP/1.1" 500 123 "-" "Mozilla/5.0"
+2024-11-20 10:01:20 [INFO] Reconnecting to database...
+2024-11-20 10:01:25 [INFO] Database connection re-established
+192.168.1.100 - - [20/Nov/2024:10:01:30 +0000] "GET /api/users HTTP/1.1" 200 1234 "-" "Mozilla/5.0"
+192.168.1.106 - - [20/Nov/2024:10:01:35 +0000] "POST /api/register HTTP/1.1" 400 145 "-" "Mozilla/5.0"
+2024-11-20 10:01:40 [WARN] Registration validation failed: Invalid email
+192.168.1.107 - - [20/Nov/2024:10:01:45 +0000] "POST /api/login HTTP/1.1" 401 89 "-" "Mozilla/5.0"
+2024-11-20 10:01:50 [WARN] Authentication failed for user: hacker@evil.com
+192.168.1.108 - - [20/Nov/2024:10:01:55 +0000] "GET /admin HTTP/1.1" 403 67 "-" "Mozilla/5.0"
+2024-11-20 10:02:00 [WARN] Unauthorized access attempt to /admin
+192.168.1.100 - - [20/Nov/2024:10:02:05 +0000] "GET /api/dashboard HTTP/1.1" 200 5678 "-" "Mozilla/5.0"
+192.168.1.109 - - [20/Nov/2024:10:02:10 +0000] "POST /api/comments HTTP/1.1" 201 234 "-" "Mozilla/5.0"
+2024-11-20 10:02:15 [INFO] New comment posted on product 456
+192.168.1.110 - - [20/Nov/2024:10:02:20 +0000] "GET /api/search?q=laptop HTTP/1.1" 200 3456 "-" "Mozilla/5.0"
+2024-11-20 10:02:25 [INFO] Search performed: query='laptop', results=23
+192.168.1.111 - - [20/Nov/2024:10:02:30 +0000] "PUT /api/users/123 HTTP/1.1" 200 456 "-" "Mozilla/5.0"
+2024-11-20 10:02:35 [INFO] User profile updated: user_id=123
+192.168.1.100 - - [20/Nov/2024:10:02:40 +0000] "GET /api/notifications HTTP/1.1" 200 789 "-" "Mozilla/5.0"
+192.168.1.112 - - [20/Nov/2024:10:02:45 +0000] "POST /api/upload HTTP/1.1" 413 0 "-" "Mozilla/5.0"
+2024-11-20 10:02:50 [WARN] Upload rejected: File too large (15MB)
+192.168.1.113 - - [20/Nov/2024:10:02:55 +0000] "GET /static/app.js HTTP/1.1" 304 0 "-" "Mozilla/5.0"
+192.168.1.114 - - [20/Nov/2024:10:03:00 +0000] "GET /static/styles.css HTTP/1.1" 304 0 "-" "Mozilla/5.0"
+2024-11-20 10:03:05 [INFO] Cache hit rate: 87%
+192.168.1.115 - - [20/Nov/2024:10:03:10 +0000] "GET /health HTTP/1.1" 200 45 "-" "HealthCheck/1.0"
+2024-11-20 10:03:15 [INFO] Health check passed
+192.168.1.100 - - [20/Nov/2024:10:03:20 +0000] "POST /api/logout HTTP/1.1" 200 34 "-" "Mozilla/5.0"
+2024-11-20 10:03:25 [INFO] User logged out: john@example.com
+192.168.1.116 - - [20/Nov/2024:10:03:30 +0000] "GET /api/stats HTTP/1.1" 200 1234 "-" "Mozilla/5.0"
+2024-11-20 10:03:35 [INFO] Hourly statistics generated
+192.168.1.117 - - [20/Nov/2024:10:03:40 +0000] "DELETE /api/cache HTTP/1.1" 200 23 "-" "Mozilla/5.0"
+2024-11-20 10:03:45 [INFO] Cache cleared by admin
+192.168.1.118 - - [20/Nov/2024:10:03:50 +0000] "GET /metrics HTTP/1.1" 200 4567 "-" "Prometheus/2.0"
+2024-11-20 10:03:55 [INFO] Metrics exported

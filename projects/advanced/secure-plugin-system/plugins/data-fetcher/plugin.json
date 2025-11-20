@@ -1,0 +1,15 @@
+{
+  "id": "data-fetcher",
+  "name": "Data Fetcher",
+  "version": "1.0.0",
+  "description": "Fetch data from URLs and save to files",
+  "author": "Plugin System",
+  "main": "index.js",
+  "permissions": ["fs", "network", "storage"],
+  "dependencies": [],
+  "resourceLimits": {
+    "memory": 52428800,
+    "timeout": 30000,
+    "cpu": 5000
+  }
+}

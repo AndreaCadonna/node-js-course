@@ -1,0 +1,16 @@
+This is a sample text file for testing the file upload service.
+
+You can use this file to test the upload functionality:
+  node test/test-upload.js test/sample.txt
+
+Or upload it through the web interface at http://localhost:3000
+
+The file upload service supports:
+- Multiple file uploads
+- Progress tracking
+- File validation
+- Stream-based processing
+- Real-time updates via Server-Sent Events
+
+This is just a plain text file, but the service supports any file type
+unless you configure allowed extensions.

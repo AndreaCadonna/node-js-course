@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-time File Monitor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Real-time File Monitor</h1>
+      <div class="status">
+        <span id="status" class="status-indicator">Disconnected</span>
+        <button id="reset-btn" class="btn btn-secondary">Reset Stats</button>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <!-- Control Panel -->
+      <section class="card control-panel">
+        <h2>Control Panel</h2>
+
+        <div class="control-group">
+          <label>Watch New Path</label>
+          <div class="input-group">
+            <input type="text" id="watch-path-input" placeholder="/path/to/watch">
+            <button id="watch-btn" class="btn btn-primary">Watch</button>
+          </div>
+        </div>
+
+        <div class="watched-paths">
+          <h3>Watched Paths</h3>
+          <div id="watched-paths-list" class="paths-list">
+            <p class="empty-state">No paths being watched</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistics -->
+      <section class="card stats-panel">
+        <h2>Statistics</h2>
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-label">Total Changes</span>
+            <span class="stat-value" id="total-changes">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Filtered</span>
+            <span class="stat-value" id="filtered-changes">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Watched Paths</span>
+            <span class="stat-value" id="watched-paths">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Tracked Files</span>
+            <span class="stat-value" id="tracked-files">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Uptime</span>
+            <span class="stat-value" id="uptime">0s</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Changes/sec</span>
+            <span class="stat-value" id="changes-per-sec">0</span>
+          </div>
+        </div>
+
+        <div class="change-types">
+          <h3>Changes by Type</h3>
+          <div id="change-types" class="types-list">
+            <p class="empty-state">No changes yet</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Filter Settings -->
+    <section class="card filter-panel">
+      <h2>Filter Settings</h2>
+      <div class="filter-grid">
+        <div class="filter-group">
+          <label>
+            <input type="checkbox" id="filter-hidden" checked>
+            Ignore Hidden Files
+          </label>
+        </div>
+
+        <div class="filter-group">
+          <label>Include Extensions (comma-separated)</label>
+          <input type="text" id="filter-include-ext" placeholder=".js,.txt,.md">
+        </div>
+
+        <div class="filter-group">
+          <label>Exclude Extensions (comma-separated)</label>
+          <input type="text" id="filter-exclude-ext" placeholder=".log,.tmp">
+        </div>
+
+        <div class="filter-group">
+          <label>Change Types (comma-separated)</label>
+          <input type="text" id="filter-change-types" placeholder="created,modified,deleted">
+        </div>
+
+        <div class="filter-group">
+          <button id="update-filter-btn" class="btn btn-primary">Update Filter</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Changes -->
+    <section class="card changes-panel">
+      <div class="section-header">
+        <h2>Recent Changes</h2>
+        <div class="header-actions">
+          <button id="clear-history-btn" class="btn btn-secondary">Clear History</button>
+          <button id="pause-btn" class="btn btn-secondary">Pause</button>
+        </div>
+      </div>
+
+      <div id="changes-list" class="changes-list">
+        <p class="empty-state">No file changes detected yet. Start watching a directory to see changes.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
