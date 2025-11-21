@@ -1,0 +1,15 @@
+{
+  "id": "text-processor",
+  "name": "Text Processor",
+  "version": "1.0.0",
+  "description": "Process and transform text using various operations",
+  "author": "Plugin System",
+  "main": "index.js",
+  "permissions": ["storage", "crypto"],
+  "dependencies": [],
+  "resourceLimits": {
+    "memory": 20971520,
+    "timeout": 10000,
+    "cpu": 2000
+  }
+}

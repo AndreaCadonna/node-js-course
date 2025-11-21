@@ -1,0 +1,26 @@
+{
+  "port": 3000,
+  "host": "localhost",
+  "paths": [
+    "./watched"
+  ],
+  "recursive": true,
+  "ignoreHidden": true,
+  "ignorePaths": [
+    "node_modules",
+    ".git",
+    ".DS_Store",
+    "dist",
+    "build"
+  ],
+  "includeExtensions": null,
+  "excludeExtensions": [
+    ".log",
+    ".tmp",
+    ".swp"
+  ],
+  "debounceTime": 100,
+  "maxHistory": 1000,
+  "minSize": 0,
+  "maxSize": 104857600
+}

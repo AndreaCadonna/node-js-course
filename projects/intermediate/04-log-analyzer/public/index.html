@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log Analyzer Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Log Analyzer Dashboard</h1>
+      <div class="status">
+        <span id="status" class="status-indicator">Disconnected</span>
+        <button id="reset-btn" class="btn btn-secondary">Reset Stats</button>
+      </div>
+    </header>
+
+    <div class="dashboard">
+      <!-- Overview Stats -->
+      <section class="card">
+        <h2>Overview</h2>
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-label">Total Lines</span>
+            <span class="stat-value" id="total-lines">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Errors</span>
+            <span class="stat-value error" id="error-count">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Warnings</span>
+            <span class="stat-value warning" id="warn-count">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Error Rate</span>
+            <span class="stat-value" id="error-rate">0%</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Duration</span>
+            <span class="stat-value" id="duration">0s</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Lines/Sec</span>
+            <span class="stat-value" id="lines-per-sec">0</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- HTTP Status Codes -->
+      <section class="card">
+        <h2>HTTP Status Codes</h2>
+        <div id="status-codes" class="bar-chart">
+          <p class="empty-state">No data available</p>
+        </div>
+      </section>
+
+      <!-- Top Paths -->
+      <section class="card">
+        <h2>Top Paths</h2>
+        <div id="top-paths" class="bar-chart">
+          <p class="empty-state">No data available</p>
+        </div>
+      </section>
+
+      <!-- Top IPs -->
+      <section class="card">
+        <h2>Top IP Addresses</h2>
+        <div id="top-ips" class="list">
+          <p class="empty-state">No data available</p>
+        </div>
+      </section>
+
+      <!-- HTTP Methods -->
+      <section class="card">
+        <h2>HTTP Methods</h2>
+        <div id="methods" class="bar-chart">
+          <p class="empty-state">No data available</p>
+        </div>
+      </section>
+
+      <!-- Log Levels -->
+      <section class="card">
+        <h2>Log Levels</h2>
+        <div id="log-levels" class="bar-chart">
+          <p class="empty-state">No data available</p>
+        </div>
+      </section>
+
+      <!-- Recent Alerts -->
+      <section class="card full-width">
+        <h2>Recent Alerts</h2>
+        <div id="alerts" class="alerts-list">
+          <p class="empty-state">No alerts</p>
+        </div>
+      </section>
+
+      <!-- Recent Errors -->
+      <section class="card full-width">
+        <h2>Recent Errors</h2>
+        <div id="errors" class="errors-list">
+          <p class="empty-state">No errors</p>
+        </div>
+      </section>
+
+      <!-- Recent Logs -->
+      <section class="card full-width">
+        <h2>Recent Logs</h2>
+        <div id="recent-logs" class="logs-list">
+          <p class="empty-state">No logs processed</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
